@@ -7329,7 +7329,7 @@ MonoBehaviour:
   dialogText: {fileID: 548527488}
   triggerOnce: 1
   requireKeyPress: 0
-  destroyAfterTrigger: 0
+  destroyAfterTrigger: 1
   delayedTrigger: 0
   delaySeconds: 2
 --- !u!65 &824985029
