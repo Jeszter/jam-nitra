@@ -9,6 +9,9 @@ public class BedSleepTrigger : MonoBehaviour
     [Tooltip("UI Image for the fade effect (should be a full-screen black panel)")]
     public Image fadeImage;
     
+    [Tooltip("Transform to teleport player to during blackout")]
+    public Transform teleportDestination;
+    
     [Header("Effect Settings")]
     [Tooltip("Duration of the fade to black")]
     public float fadeDuration = 1.5f;
@@ -29,6 +32,7 @@ public class BedSleepTrigger : MonoBehaviour
     private bool hasTriggered = false;
     private bool isEffectRunning = false;
     private Transform playerTransform;
+    private CharacterController playerController;
     
     private void Start()
     {
@@ -37,14 +41,13 @@ public class BedSleepTrigger : MonoBehaviour
         if (player != null)
         {
             playerTransform = player.transform;
+            playerController = player.GetComponent<CharacterController>();
         }
         
         // Ensure fade image starts hidden
         if (fadeImage != null)
         {
-            // Remove any custom material, use default UI
             fadeImage.material = null;
-            
             Color c = fadeImage.color;
             c.a = 0f;
             fadeImage.color = c;
@@ -66,12 +69,12 @@ public class BedSleepTrigger : MonoBehaviour
             if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
             {
                 Debug.Log("BedSleepTrigger: E pressed, starting effect");
-                StartCoroutine(FadeRoutine());
+                StartCoroutine(FadeAndTeleportRoutine());
             }
         }
     }
     
-    private IEnumerator FadeRoutine()
+    private IEnumerator FadeAndTeleportRoutine()
     {
         if (fadeImage == null)
         {
@@ -109,7 +112,29 @@ public class BedSleepTrigger : MonoBehaviour
         c.a = 1f;
         fadeImage.color = c;
         
-        Debug.Log("BedSleepTrigger: Holding black screen");
+        Debug.Log("BedSleepTrigger: Screen is black, teleporting player");
+        
+        // Teleport player while screen is black
+        if (teleportDestination != null && playerTransform != null)
+        {
+            // Disable CharacterController temporarily to allow position change
+            if (playerController != null)
+            {
+                playerController.enabled = false;
+            }
+            
+            // Teleport player
+            playerTransform.position = teleportDestination.position;
+            playerTransform.rotation = teleportDestination.rotation;
+            
+            Debug.Log($"BedSleepTrigger: Player teleported to {teleportDestination.position}");
+            
+            // Re-enable CharacterController
+            if (playerController != null)
+            {
+                playerController.enabled = true;
+            }
+        }
         
         // Phase 2: Hold black screen
         yield return new WaitForSeconds(holdDuration);
@@ -151,5 +176,13 @@ public class BedSleepTrigger : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, interactionDistance);
+        
+        // Draw line to teleport destination
+        if (teleportDestination != null)
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawLine(transform.position, teleportDestination.position);
+            Gizmos.DrawWireSphere(teleportDestination.position, 0.5f);
+        }
     }
 }
