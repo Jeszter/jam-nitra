@@ -1,4 +1,5 @@
 using UnityEngine;
+using Game.Interactions;
 
 namespace Game.Doors
 {
@@ -6,7 +7,7 @@ namespace Game.Doors
     /// Simple hinge-like door: toggles between closed and open by rotating around local Y.
     /// Assumes the GameObject pivot is reasonably close to the hinge.
     /// </summary>
-    public class DoorInteractable : MonoBehaviour
+    public class DoorInteractable : MonoBehaviour, IInteractable
     {
         [Header("Motion")]
         [SerializeField] private Transform rotateTarget;
@@ -47,6 +48,8 @@ namespace Game.Doors
         public void Toggle() => isOpen = !isOpen;
         public void Open() => isOpen = true;
         public void Close() => isOpen = false;
+
+        public void Interact(GameObject interactor) => Toggle();
 
         // Used by editor/setup scripts.
         public void SetRotateTarget(Transform t)

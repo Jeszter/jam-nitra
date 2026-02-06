@@ -1,4 +1,5 @@
 using UnityEngine;
+using Game.Interactions;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -6,7 +7,7 @@ using UnityEngine.InputSystem;
 namespace Game.Doors
 {
     /// <summary>
-    /// Raycasts from the camera forward and toggles DoorInteractable on E.
+    /// Raycasts from the camera forward and interacts with the first IInteractable found on E.
     /// Works with Unity Input System (Keyboard.current).
     /// </summary>
     public class PlayerDoorInteractor : MonoBehaviour
@@ -22,6 +23,15 @@ namespace Game.Doors
             if (cam != null) cameraTransform = cam.transform;
         }
 
+        private void Awake()
+        {
+            if (cameraTransform == null)
+            {
+                var cam = Camera.main;
+                if (cam != null) cameraTransform = cam.transform;
+            }
+        }
+
         private void Update()
         {
             if (!WasInteractPressed())
@@ -33,11 +43,11 @@ namespace Game.Doors
             if (!Physics.Raycast(cameraTransform.position, cameraTransform.forward, out var hit, interactDistance, raycastMask, QueryTriggerInteraction.Ignore))
                 return;
 
-            var door = hit.transform.GetComponentInParent<DoorInteractable>();
-            if (door == null)
+            var interactable = hit.transform.GetComponentInParent<IInteractable>();
+            if (interactable == null)
                 return;
 
-            door.Toggle();
+            interactable.Interact(gameObject);
         }
 
         private static bool WasInteractPressed()
