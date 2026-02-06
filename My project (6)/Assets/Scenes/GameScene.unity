@@ -370,13 +370,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12785233}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: 0.265, y: 0.005, z: 0.557}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0.26500034, y: 0.0050001144, z: 0.55700016}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 989846249}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &12785235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8775,37 +8775,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 89531dedcd0d66d46b9dcdb2cee9f7ae, type: 3}
   m_PrefabInstance: {fileID: 1227494104}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &989846245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 989846244}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d20ac2bbcd6e4942a28b858e7c19e99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FpsCharacterController
-  cameraPivot: {fileID: 0}
-  mouseSensitivity: 2
-  verticalLookLimit: 85
-  lockCursorOnStart: 1
-  moveSpeed: 4.5
-  sprintSpeed: 7
-  crouchSpeed: 2.75
-  jumpHeight: 1.25
-  gravity: -18
-  groundedStickForce: -2
-  groundCheckDistance: 0.2
-  groundLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  standingHeight: 1.8
-  crouchHeight: 1.1
-  crouchLerpSpeed: 12
-  preventStandUnderCeiling: 1
-  moveResponsiveness: 14
 --- !u!143 &989846246
 CharacterController:
   m_ObjectHideFlags: 0
@@ -8836,6 +8805,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 89531dedcd0d66d46b9dcdb2cee9f7ae, type: 3}
   m_PrefabInstance: {fileID: 1227494104}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &989846252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989846244}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1135417f95451f44db967c27644d0863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  cameraPivot: {fileID: 12785234}
+  dogModel: {fileID: 989846249}
+  moveSpeed: 3.5
+  jumpForce: 1.2
+  gravity: -9.8
+  mouseSensitivity: 2
+  verticalLookLimit: 75
 --- !u!1 &1000467623 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fceb95541a959fe4197bd7f1c49250cc, type: 3}
@@ -10507,7 +10495,7 @@ PrefabInstance:
       addedObject: {fileID: 989846246}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 89531dedcd0d66d46b9dcdb2cee9f7ae, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 989846245}
+      addedObject: {fileID: 989846252}
   m_SourcePrefab: {fileID: 100100000, guid: 89531dedcd0d66d46b9dcdb2cee9f7ae, type: 3}
 --- !u!1 &1232767796
 GameObject:

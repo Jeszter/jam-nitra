@@ -19,7 +19,7 @@ public class BecomeDogTrigger : MonoBehaviour
     private Transform playerTransform;
     private CharacterController playerController;
 
-    private FpsCharacterController dogController;
+    private DogController dogController;
     private FpsCharacterController playerFpsController;
 
     private bool isRunning = false;
@@ -39,7 +39,7 @@ public class BecomeDogTrigger : MonoBehaviour
 
         if (dogCamera != null)
         {
-            dogController = dogCamera.GetComponentInParent<FpsCharacterController>();
+            dogController = dogCamera.GetComponentInParent<DogController>();
             dogCamera.gameObject.SetActive(false);
         }
 
