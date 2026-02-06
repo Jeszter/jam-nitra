@@ -12034,7 +12034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Gameplay.HotDogEatManager
   targetHotDogCount: 5
-  nextSceneName: GameScene
+  nextSceneName: FlappyBird
 --- !u!4 &1572305395
 Transform:
   m_ObjectHideFlags: 0

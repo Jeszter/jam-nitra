@@ -7,7 +7,7 @@ namespace Game.Gameplay
     public sealed class HotDogEatManager : MonoBehaviour
     {
         [SerializeField] private int targetHotDogCount = 5;
-        [SerializeField] private string nextSceneName = "GameScene";
+        [SerializeField] private string nextSceneName = "FlappyBird";
 
         private static HotDogEatManager _instance;
         private int _eaten;
@@ -53,7 +53,7 @@ namespace Game.Gameplay
             if (string.IsNullOrWhiteSpace(nextSceneName))
                 return;
 
-            SceneManager.LoadScene(nextSceneName);
+            Game.UI.WhiteFadeSceneTransition.LoadSceneWithFade(nextSceneName);
         }
     }
 }
