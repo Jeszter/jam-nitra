@@ -25,6 +25,28 @@ public class DogDialogTrigger : MonoBehaviour
     private bool hasTriggered = false;
     private bool playerInTrigger = false;
 
+    private void Start()
+    {
+        BoxCollider col = GetComponent<BoxCollider>();
+        if (col == null) return;
+
+        Collider[] hits = Physics.OverlapBox(
+            col.bounds.center,
+            col.bounds.extents,
+            transform.rotation
+        );
+
+        foreach (var hit in hits)
+        {
+            if (hit.CompareTag("Player"))
+            {
+                TryShowDialog();
+                break;
+            }
+        }
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player"))
