@@ -10098,8 +10098,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1135417f95451f44db967c27644d0863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DogController
-  cameraPivot: {fileID: 0}
-  dogModel: {fileID: 0}
+  cameraPivot: {fileID: 12785234}
+  dogModel: {fileID: 1166879000}
   moveSpeed: 3.5
   jumpForce: 1.2
   gravity: -9.8
