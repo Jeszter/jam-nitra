@@ -87,7 +87,7 @@ public class WallWalkingController : MonoBehaviour
     private Vector3 _currentPlanarMove;
     private bool _isGrounded;
     private float _jumpTimer;
-    
+
     // Jump calculation constant (simulates gravity for jump height calculation)
     private const float JumpGravity = -18f;
 
@@ -104,7 +104,7 @@ public class WallWalkingController : MonoBehaviour
         _currentUp = transform.up;
         _targetUp = transform.up;
         _smoothedUp = transform.up;
-        
+
         if (cameraPivot != null)
         {
             _cameraCurrentRotation = cameraPivot.localRotation;
@@ -218,13 +218,13 @@ public class WallWalkingController : MonoBehaviour
         // Faster when angle is large, slower for fine adjustments
         float angleDiff = Vector3.Angle(_currentUp, _targetUp);
         float adaptiveSpeed = rotationSpeed * Mathf.Clamp01(angleDiff / 45f + 0.3f);
-        
+
         _currentUp = Vector3.Slerp(_currentUp, _targetUp, Time.deltaTime * adaptiveSpeed);
         _currentUp.Normalize();
 
         // Calculate the rotation to align transform.up with _currentUp while preserving forward direction
         Vector3 currentForward = transform.forward;
-        
+
         // Project forward onto the plane perpendicular to the new up
         Vector3 newForward = Vector3.ProjectOnPlane(currentForward, _currentUp);
         if (newForward.sqrMagnitude < 0.001f)
@@ -237,7 +237,7 @@ public class WallWalkingController : MonoBehaviour
         // Apply yaw rotation around the current up axis
         Quaternion yawRotation = Quaternion.AngleAxis(_yaw, _currentUp);
         newForward = yawRotation * Vector3.ProjectOnPlane(Vector3.forward, _currentUp).normalized;
-        
+
         if (newForward.sqrMagnitude < 0.001f)
         {
             newForward = yawRotation * Vector3.ProjectOnPlane(Vector3.right, _currentUp).normalized;
@@ -297,8 +297,8 @@ public class WallWalkingController : MonoBehaviour
 
         // Smoothly interpolate to target rotation
         _cameraCurrentRotation = Quaternion.Slerp(
-            _cameraCurrentRotation, 
-            _cameraTargetRotation, 
+            _cameraCurrentRotation,
+            _cameraTargetRotation,
             Time.deltaTime * cameraTransitionSpeed
         );
 
@@ -330,7 +330,7 @@ public class WallWalkingController : MonoBehaviour
 
         Vector3 desiredMove = moveDir * speed;
 
-        // гарантируем, что движение всегда строго по поверхности
+        // ???????????, ??? ???????? ?????? ?????? ?? ???????????
         desiredMove = Vector3.ProjectOnPlane(desiredMove, _currentUp);
 
         _currentPlanarMove = Vector3.Lerp(
@@ -339,7 +339,7 @@ public class WallWalkingController : MonoBehaviour
             Time.deltaTime * moveResponsiveness
         );
 
-        // гасим остаточное движение когда игрок не нажимает кнопки
+        // ????? ?????????? ???????? ????? ????? ?? ???????? ??????
         if (moveInput.sqrMagnitude < 0.01f)
         {
             _currentPlanarMove = Vector3.Lerp(
@@ -378,16 +378,16 @@ public class WallWalkingController : MonoBehaviour
 
         if (_isGrounded)
         {
-            // полностью убираем любую скорость вдоль поверхности
+            // ????????? ??????? ????? ???????? ????? ???????????
             _velocity = Vector3.Project(_velocity, _currentUp);
 
-            // мягкое прижатие строго к поверхности
+            // ?????? ???????? ?????? ? ???????????
             Vector3 stick = -_currentUp * surfaceStickForce * Time.deltaTime;
             totalMove += stick;
         }
         else
         {
-            // псевдогравитация
+            // ????????????????
             _velocity += -_currentUp * 9f * Time.deltaTime;
         }
 
