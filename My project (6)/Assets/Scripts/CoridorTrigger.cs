@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ActivateObjectTrigger : MonoBehaviour
 {
-    public GameObject targetObject;
+    public GameObject targetFolder;
 
     private bool used = false;
 
@@ -11,8 +11,8 @@ public class ActivateObjectTrigger : MonoBehaviour
         if (used) return;
         if (!other.CompareTag("Player")) return;
 
-        if (targetObject != null)
-            targetObject.SetActive(true);
+        if (targetFolder != null)
+            targetFolder.SetActive(true);
 
         used = true;
         gameObject.SetActive(false);

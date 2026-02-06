@@ -7,12 +7,16 @@ public class ReturnPlayerTrigger : MonoBehaviour
 
     private Transform playerTransform;
     private CharacterController playerController;
+    private Camera playerCamera;
     private Transform teleportDestination;
 
     private Vector3 originalScale;
     private float originalHeight;
     private float originalRadius;
     private Vector3 originalCenter;
+
+    private float originalFOV;
+    private Vector3 originalCameraLocalPos;
 
     private bool initialized = false;
 
@@ -23,6 +27,7 @@ public class ReturnPlayerTrigger : MonoBehaviour
         {
             playerTransform = player.transform;
             playerController = player.GetComponent<CharacterController>();
+            playerCamera = player.GetComponentInChildren<Camera>();
 
             originalScale = playerTransform.localScale;
 
@@ -31,6 +36,12 @@ public class ReturnPlayerTrigger : MonoBehaviour
                 originalHeight = playerController.height;
                 originalRadius = playerController.radius;
                 originalCenter = playerController.center;
+            }
+
+            if (playerCamera != null)
+            {
+                originalFOV = playerCamera.fieldOfView;
+                originalCameraLocalPos = playerCamera.transform.localPosition;
             }
         }
 
@@ -71,6 +82,12 @@ public class ReturnPlayerTrigger : MonoBehaviour
             playerController.radius = originalRadius;
             playerController.center = originalCenter;
             playerController.enabled = true;
+        }
+
+        if (playerCamera != null)
+        {
+            playerCamera.fieldOfView = originalFOV;
+            playerCamera.transform.localPosition = originalCameraLocalPos;
         }
     }
 }
