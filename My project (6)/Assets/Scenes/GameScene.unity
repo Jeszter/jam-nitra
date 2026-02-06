@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 381792448}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1349,7 +1349,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1406186322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1366,10 +1366,10 @@ RectTransform:
   - {fileID: 1531911509}
   m_Father: {fileID: 159938750}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -157}
-  m_SizeDelta: {x: 1092.4622, y: 702.2972}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 140, y: -180}
+  m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1406186323
 MonoBehaviour:
@@ -1623,7 +1623,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531911508}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1782,7 +1782,7 @@ GameObject:
   - component: {fileID: 1993004718}
   - component: {fileID: 1993004717}
   - component: {fileID: 1993004716}
-  - component: {fileID: 1993004715}
+  - component: {fileID: 1993004720}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1790,22 +1790,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1993004715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1993004714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c70ada323ac74ed4389c42b3206c7c1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TriggerTextPlayer
-  uiText: {fileID: 0}
-  message: 
-  audioSource: {fileID: 0}
-  totalTime: 2
 --- !u!65 &1993004716
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1899,6 +1883,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1993004720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993004714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec253182f9f78fa468000c6773aca02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DogDialogTrigger
+  dialogMessage: I love you
+  dogDialogUI: {fileID: 1406186321}
+  dialogText: {fileID: 920993274}
+  triggerOnce: 1
 --- !u!1 &2105018088
 GameObject:
   m_ObjectHideFlags: 0
@@ -2653,6 +2653,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &133962961329721850
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2827,6 +2833,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &168569928386135022
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3413,6 +3425,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &282777363173066403
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4995,6 +5013,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!65 &598424598309425878
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5140,6 +5164,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &628005789446748138
 Transform:
   m_ObjectHideFlags: 0
@@ -6185,6 +6215,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &798854718436338383
 GameObject:
   m_ObjectHideFlags: 0
@@ -8215,6 +8251,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &1144603153548178449
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9399,6 +9441,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &1328832399182285811
 Transform:
   m_ObjectHideFlags: 0
@@ -9480,6 +9528,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &1351268814162384926
 GameObject:
   m_ObjectHideFlags: 0
@@ -10952,6 +11006,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1542036771902004187
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13746,6 +13806,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &1867385359846204550
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18403,6 +18469,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &1875161216716770780
 Transform:
   m_ObjectHideFlags: 0
@@ -18614,6 +18686,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &1875161216744305396
 Transform:
   m_ObjectHideFlags: 0
@@ -19384,6 +19462,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &1875161216792809481
 GameObject:
   m_ObjectHideFlags: 0
@@ -21473,6 +21557,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &1875161216932689624
 GameObject:
   m_ObjectHideFlags: 0
@@ -21834,6 +21924,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!114 &1875161216960261688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21850,6 +21946,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161216960261689
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22763,6 +22865,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161217044440267
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23538,6 +23646,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!114 &1875161217134763259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23554,6 +23668,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &1875161217134918952
 Transform:
   m_ObjectHideFlags: 0
@@ -24682,6 +24802,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &1875161217218188512
 Transform:
   m_ObjectHideFlags: 0
@@ -26528,6 +26654,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161217362528966
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27442,6 +27574,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161217406767228
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27507,6 +27645,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &1875161217407720174
 Transform:
   m_ObjectHideFlags: 0
@@ -27704,6 +27848,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161217421977968
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27786,6 +27936,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161217434843433
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28310,6 +28466,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161217458043447
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28375,6 +28537,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161217464535871
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28720,6 +28888,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &1875161217482607860
 Transform:
   m_ObjectHideFlags: 0
@@ -30729,6 +30903,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &1875161217608171693
 Transform:
   m_ObjectHideFlags: 0
@@ -33626,6 +33806,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &1875161217776995192
 Transform:
   m_ObjectHideFlags: 0
@@ -34314,6 +34500,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161217805746963
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36442,6 +36634,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161217944937311
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38230,6 +38428,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161218004950124
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38417,6 +38621,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161218019963581
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38716,6 +38926,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161218053034890
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39167,6 +39383,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &1875161218095853221
 Transform:
   m_ObjectHideFlags: 0
@@ -41722,6 +41944,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161218324427217
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42207,6 +42435,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &1875161218382645329
 Transform:
   m_ObjectHideFlags: 0
@@ -43770,6 +44004,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161218483057277
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44121,6 +44361,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161218495927348
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45041,6 +45287,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!65 &1875161218568162920
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46262,6 +46514,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &1875161218663421639
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46819,6 +47077,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1876327775112708965}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1876330534811345901
 Transform:
@@ -46994,6 +47258,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1876394150469341439}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1876396618889520005
 Transform:
@@ -47064,6 +47334,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1876401416246359627}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1876401980862386491
 Transform:
@@ -47209,6 +47485,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1876454920310960431}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1876455093575781293
 Transform:
@@ -47264,6 +47546,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1876455093575781293}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1876468502547201351
 Transform:
@@ -47333,6 +47621,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1876481242638033393}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1876494183020414641
 Transform:
@@ -47478,6 +47772,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1876553854052108337}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1876553898785876557
 Transform:
@@ -47578,6 +47878,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1876565984295102593}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1876589953505517379
 Transform:
@@ -47738,6 +48044,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1876630031248258893}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1876634840941429683
 Transform:
@@ -47807,6 +48119,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1876635990299119141}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1876638272900871489
 Transform:
@@ -47876,6 +48194,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1876640085218234551}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1876662863556361111
 Transform:
@@ -48015,6 +48339,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1876668108993062099}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1876672210320161777
 Transform:
@@ -48108,6 +48438,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1876700610897567961}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1876700703489455801
 Transform:
@@ -48192,6 +48528,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1876707139792658167}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1876722445130112465
 Transform:
@@ -48284,6 +48626,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1876739492301356549}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1876742323558777387
 Transform:
@@ -48338,6 +48686,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1876742323558777387}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1876757551173943149
 Transform:
@@ -48620,6 +48974,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1879301797356459793}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1879318446920250213
 Transform:
@@ -48689,6 +49049,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1879345763635880977}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1879353482022880033
 Transform:
@@ -48834,6 +49200,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1879440735621841543}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1879451519703201563
 Transform:
@@ -48949,6 +49321,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1879488396900346589}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1879494233388060587
 Transform:
@@ -49063,6 +49441,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1879530183894660503}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1879557387094328069
 Transform:
@@ -49132,6 +49516,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1879558090521332587}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1879588576088945959
 Transform:
@@ -49292,6 +49682,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1879614731858059925}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1879615641935233849
 Transform:
@@ -49391,6 +49787,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1879628717427537573}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1879629538634224161
 Transform:
@@ -49446,6 +49848,12 @@ MonoBehaviour:
   rotateTarget: {fileID: 1879629538634224161}
   openAngle: 90
   openSpeed: 6
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0.1
   isOpen: 0
 --- !u!4 &1879637342659085835
 Transform:
@@ -53926,6 +54334,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &1924055642035532060
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -56803,6 +57217,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!205 &2034424699475390279
 LODGroup:
   m_ObjectHideFlags: 0
@@ -57327,6 +57747,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &2097297131938961597
 GameObject:
   m_ObjectHideFlags: 0
@@ -57361,6 +57787,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 2
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &2107804131624177592
 Transform:
   m_ObjectHideFlags: 0
@@ -59283,6 +59715,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &2480471744102935942
 GameObject:
   m_ObjectHideFlags: 0
@@ -60569,6 +61007,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &2697949895304830032
 Transform:
   m_ObjectHideFlags: 0
@@ -60811,6 +61255,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 2
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &2737737364202253279
 GameObject:
   m_ObjectHideFlags: 0
@@ -60845,6 +61295,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &2746144376960932375
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -61075,6 +61531,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &2778546752457748618
 GameObject:
   m_ObjectHideFlags: 0
@@ -61955,6 +62417,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &2942939995121561651
 GameObject:
   m_ObjectHideFlags: 0
@@ -63219,6 +63687,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 2
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &3103941258879173209
 GameObject:
   m_ObjectHideFlags: 0
@@ -63460,6 +63934,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!65 &3127379421554219856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63528,6 +64008,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &3141801505991747947
 GameObject:
   m_ObjectHideFlags: 0
@@ -64291,6 +64777,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!114 &3305185369135205061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64322,6 +64814,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &3316890380215327201
 GameObject:
   m_ObjectHideFlags: 0
@@ -65147,6 +65645,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &3446615776168665753
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -65395,6 +65899,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!114 &3484811710731508265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65411,6 +65921,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &3486097962492101965
 Transform:
   m_ObjectHideFlags: 0
@@ -65442,6 +65958,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &3497929887132039864
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -65548,6 +66070,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &3518772389245564380
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -65572,6 +66100,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!65 &3520910754870544003
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -66122,6 +66656,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!114 &3618462213267874182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66138,6 +66678,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &3621681819975569090
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66293,6 +66839,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!114 &3629436295903642987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66309,6 +66861,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &3632169916447308192
 GameObject:
   m_ObjectHideFlags: 0
@@ -66839,6 +67397,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &3715398473203118026
 Transform:
   m_ObjectHideFlags: 0
@@ -67163,6 +67727,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &3759418819098675651
 Transform:
   m_ObjectHideFlags: 0
@@ -67675,6 +68245,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!114 &3874026339044258131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67691,6 +68267,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &3877807854950178098
 Transform:
   m_ObjectHideFlags: 0
@@ -68103,6 +68685,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &3940749948700089048
 GameObject:
   m_ObjectHideFlags: 0
@@ -69047,6 +69635,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &4087186868320813040
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -69392,6 +69986,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &4150087144801157570
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -70289,6 +70889,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &4282919781404214985
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70504,6 +71110,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &4305902144731089047
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70801,6 +71413,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &4346734928027253049
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -71775,6 +72393,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &4473542559031930784
 Transform:
   m_ObjectHideFlags: 0
@@ -72572,6 +73196,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &4576054627784737735
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -74312,6 +74942,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &4872460974835882672
 Transform:
   m_ObjectHideFlags: 0
@@ -75337,6 +75973,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &5102383992477187906
 GameObject:
   m_ObjectHideFlags: 0
@@ -75819,6 +76461,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &5196443065645393283
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -76373,6 +77021,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &5265312494823737995
 GameObject:
   m_ObjectHideFlags: 0
@@ -77016,6 +77670,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &5399830308189924604
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77277,6 +77937,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!114 &5447181563002553630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77293,6 +77959,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &5447751779086363556
 Transform:
   m_ObjectHideFlags: 0
@@ -77931,6 +78603,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &5524106794324895875
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -79057,6 +79735,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &5760534430495354328
 Transform:
   m_ObjectHideFlags: 0
@@ -79253,6 +79937,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &5807456729977018167
 GameObject:
   m_ObjectHideFlags: 0
@@ -79573,6 +80263,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &5855805707924318089
 GameObject:
   m_ObjectHideFlags: 0
@@ -80077,6 +80773,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &5942796650027434543
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -80682,6 +81384,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &6045947990917764222
 Transform:
   m_ObjectHideFlags: 0
@@ -82852,6 +83560,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &6308637801647141251
 GameObject:
   m_ObjectHideFlags: 0
@@ -83230,6 +83944,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &6367185061299297801
 Transform:
   m_ObjectHideFlags: 0
@@ -83939,6 +84659,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &6479009506365486736
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -84197,6 +84923,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &6520627095606130870
 Transform:
   m_ObjectHideFlags: 0
@@ -84496,6 +85228,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 2
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &6580915860949184815
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -84752,6 +85490,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!65 &6614470585968212048
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -85111,6 +85855,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &6663681610396037078
 GameObject:
   m_ObjectHideFlags: 0
@@ -85315,6 +86065,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &6706078883714609241
 Transform:
   m_ObjectHideFlags: 0
@@ -85892,6 +86648,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &6801036023638349763
 Transform:
   m_ObjectHideFlags: 0
@@ -86135,6 +86897,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &6843393774267604274
 GameObject:
   m_ObjectHideFlags: 0
@@ -86216,6 +86984,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &6857853139369671574
 GameObject:
   m_ObjectHideFlags: 0
@@ -86348,6 +87122,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &6885214412233445393
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -86445,6 +87225,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 2
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &6902716488743818537
 Transform:
   m_ObjectHideFlags: 0
@@ -86717,6 +87503,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!205 &6928443904158949951
 LODGroup:
   m_ObjectHideFlags: 0
@@ -86987,6 +87779,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!114 &6967861790276397429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87003,6 +87801,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &6971866918674554104
 GameObject:
   m_ObjectHideFlags: 0
@@ -87325,6 +88129,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &7002598755993276173
 GameObject:
   m_ObjectHideFlags: 0
@@ -87744,6 +88554,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &7096101017407597339
 Transform:
   m_ObjectHideFlags: 0
@@ -87775,6 +88591,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &7108820850295090914
 Transform:
   m_ObjectHideFlags: 0
@@ -87865,6 +88687,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &7117732257681338217
 GameObject:
   m_ObjectHideFlags: 0
@@ -88889,6 +89717,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &7276273443051290860
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -90133,6 +90967,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &7440020652124132833
 GameObject:
   m_ObjectHideFlags: 0
@@ -91546,6 +92386,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &7662221453443453668
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -91720,6 +92566,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &7698067646064304324
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -91981,6 +92833,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &7728296545597116209
 GameObject:
   m_ObjectHideFlags: 0
@@ -92695,6 +93553,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &7828679879241038868
 Transform:
   m_ObjectHideFlags: 0
@@ -92940,6 +93804,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &7857214214942487233
 Transform:
   m_ObjectHideFlags: 0
@@ -93121,6 +93991,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &7877320310105883104
 GameObject:
   m_ObjectHideFlags: 0
@@ -93368,6 +94244,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!65 &7906798474109738276
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -93672,6 +94554,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 2
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!114 &7955644113792472493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93688,6 +94576,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &7955783337192948967
 GameObject:
   m_ObjectHideFlags: 0
@@ -93974,6 +94868,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &8009870695609183850
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -94262,6 +95162,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!65 &8082415937149659949
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -94343,6 +95249,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &8090419247458611536
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -94693,6 +95605,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &8134130407206905921
 Transform:
   m_ObjectHideFlags: 0
@@ -94891,6 +95809,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!4 &8162317342085282116
 Transform:
   m_ObjectHideFlags: 0
@@ -96082,6 +97006,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!65 &8363535904704855439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -96506,6 +97436,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &8399583592873314043
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -96686,6 +97622,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &8426066012317363280
 GameObject:
   m_ObjectHideFlags: 0
@@ -97652,6 +98594,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &8588019147360105980
 GameObject:
   m_ObjectHideFlags: 0
@@ -98032,6 +98980,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 0, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!23 &8661742893646458205
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -98927,6 +99881,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &8808563732560804247
 GameObject:
   m_ObjectHideFlags: 0
@@ -99683,6 +100643,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 1
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &8905663746208225776
 GameObject:
   m_ObjectHideFlags: 0
@@ -100273,6 +101239,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!1 &9037521567878127740
 GameObject:
   m_ObjectHideFlags: 0
@@ -100394,6 +101366,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: -90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &9047938305026720391
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -101134,6 +102112,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!33 &9189814347001176201
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -101201,6 +102185,12 @@ MonoBehaviour:
   CloseRotation: {x: 0, y: 90, z: 0}
   rotSpeed: 1
   doorBool: 0
+  audioSource: {fileID: 0}
+  openClip: {fileID: 0}
+  playSoundOnOpen: 1
+  playSoundOnClose: 1
+  openSoundSkipSeconds: 0
+  openSoundLeadSeconds: 0
 --- !u!65 &9203032905451047955
 BoxCollider:
   m_ObjectHideFlags: 0
